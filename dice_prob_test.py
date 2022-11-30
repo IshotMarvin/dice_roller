@@ -55,8 +55,10 @@ def dice_roll_prob_plotter(r,n,s,prob_list):
 
     prob_percent = [str(round(i*100,2))+'%' for i in prob_list]
     plt.bar(x,prob_list,color=color)
-    for i in range(len(x)):
-        plt.text(x[i],prob_list[i]+0.003,prob_percent[i],ha='center')
+    # for i in range(len(x)): #add percentage probabilities to each bar of the graph
+    #     plt.text(x[i],prob_list[i]+0.003,prob_percent[i],ha='center')
+    plt.text(x[r-n],prob_list[r-n]+0.003,prob_percent[r-n],ha='center') #add percentage prob to only
+                                                                        #the highlighted bar
     plt.xticks(x)
     plt.yticks([])
     plt.show()
